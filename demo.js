@@ -45,3 +45,57 @@ tagihan < 4
   : tagihan === 4
   ? console.log(`Lunas bulan ini`)
   : alert(`masukan tagihan dengan benar!!`);
+
+// looping
+let numbers = 10;
+
+for (let loop = 1; loop <= numbers; loop++) {
+  console.log(loop);
+}
+
+for (let index = 0; index < numbers; index++) {
+  console.log(index);
+}
+
+const contacts = [
+  {
+    nama: "cahyono muslim sidiq",
+    alamat: "kebumen jawatengah",
+    telepon: "628567947201",
+    level: "1"
+  },
+  {
+    nama: "rafasya",
+    alamat: "kebumen jawatengah",
+    telepon: "628567947202",
+    level: "0"
+  }
+];
+
+console.log(contacts);
+
+// for (let index = 1; index <= contacts.length; index++) {
+//   const element = contacts[nama];
+//   console.log(element);
+// }
+
+// for (let index = 0; index < contacts.length; index++) {
+//   let element = contacts("nama");
+//   console.log(element);
+// }
+
+// for (let index = 1; index <= contacts.length; index++) {
+//   console.log(index.nama);
+// }
+
+for (let index = 0; index < contacts.length; index++) {
+  const element = contacts[index];
+
+  console.log(element[`nama`]);
+  console.log(element[`alamat`]);
+  if (element[`level`] == 1) {
+    console.log("Administrator");
+  } else {
+    console.log("Operator");
+  }
+}
