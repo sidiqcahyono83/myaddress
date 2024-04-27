@@ -30,7 +30,7 @@ if (bulan <= 4) {
   console.log(`Anda Salah`);
 }
 
-let tagihan = 3;
+let tagihan = 5;
 
 if (tagihan < 4) {
   console.log(`anda punya tgihan bulan sebelumnya`);
@@ -39,3 +39,9 @@ if (tagihan < 4) {
 } else if (tagihan === 4) {
   console.log(`anda lunas ... terimakasih`);
 }
+
+tagihan < 4
+  ? console.log(`anda mempunyai tagihan bulan sebelumny`)
+  : tagihan === 4
+  ? console.log(`Lunas bulan ini`)
+  : alert(`masukan tagihan dengan benar!!`);
