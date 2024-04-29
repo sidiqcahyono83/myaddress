@@ -111,16 +111,15 @@ for (let index = 0; index < contacts.length; index++) {
   }
 }
 
-let tanggalSekarang = new Date();
-let tahunSekarang = 2024;
-if (tahunSekarang === tanggalSekarang.getFullYear()) {
-  console.log(`benar sekarang tahun ${tahunSekarang}`);
+let dateNow = new Date();
+let yearNow = 2024;
+if (yearNow === dateNow.getFullYear()) {
+  console.log(`benar sekarang tahun ${yearNow}`);
 } else {
-  console.log(`salah yang benar sekarang tahun ${tahunSekarang}`);
+  console.log(`salah yang benar sekarang tahun ${yearNow}`);
 }
 
-let tahun = [2023, 2024, 2025];
-let namaBulan = [
+let month = [
   "Januari",
   "Februari",
   "Maret",
@@ -135,21 +134,20 @@ let namaBulan = [
   "Desember"
 ];
 
-console.log(tahun);
-console.log(namaBulan);
+console.log(month);
 
-console.log(tanggalSekarang.getFullYear());
+console.log(dateNow.getFullYear());
 
 // Menampilkan bulan saat ini
-let bulanSaatIni = namaBulan[tanggalSekarang.getMonth()];
-console.log(bulanSaatIni);
+let monthNow = month[dateNow.getMonth()];
+console.log(monthNow);
 
 //Menampilkan tahun saat ini dan Undenfined
-let tahunIni = tahun[tanggalSekarang.getFullYear()];
-console.log(tahunIni);
+let year = dateNow.getFullYear();
+console.log(year);
 
 // mengapa untuk tahun sintaknya harus find dahulu berbeda dengan bulan?
-let tahunsaatIni = tahun.find(
-  (tahun) => tahun === tanggalSekarang.getFullYear()
-);
-console.log(tahunsaatIni);
+// let tahunsaatIni = tahun.find(
+//   (tahun) => tahun === dateNow.getFullYear()
+// );
+// console.log(tahunsaatIni);
