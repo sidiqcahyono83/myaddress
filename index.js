@@ -28,9 +28,15 @@ for (let index = 0; index < contacts.length; index++) {
 
 // console.log(contacts);
 
-for (let index = 1; index < contacts.length; index++) {
+for (let index = 0; index < contacts.length; index++) {
   let element = contacts[index];
-  console.log(element);
+  console.table(`
+  ${element.id}
+  ${element.name}
+  ${element.address}
+  ${element.phone}
+ 
+  `);
 }
 
 // LOCAL STORAGE
@@ -50,7 +56,7 @@ let contactList = localStorage.getItem("address", contacts);
 
 let address = JSON.parse(contactList);
 
-console.log(address, 0);
+console.log(address);
 
 // sync dan async ( teratur dari atas ke bawah dan bisa loncat)
 
@@ -62,7 +68,7 @@ console.log("sleep again");
 
 setTimeout(() => {
   console.log("Hallo World");
-}, 5000);
+}, 1000);
 
 // setInterval(() => {
 //   console.log("sleep");
@@ -70,7 +76,7 @@ setTimeout(() => {
 //   console.log("sleep again");
 // }, 5000);
 
-// promise
+// promise with arrow function
 
 const promiseExample = new Promise((resolve, reject) => {
   if (1 > 0) {
@@ -80,10 +86,38 @@ const promiseExample = new Promise((resolve, reject) => {
   }
 });
 
-console.log(promiseExample);
+// console.log(promiseExample);
 
 // then chath
 
 promiseExample
   .then((result) => console.log(result))
   .catch((reject) => console.log(reject));
+
+// async await
+
+// console.log(contacts.length);
+
+// async function loopContacts() {
+//   for (const contact of contacts) {
+//     await processContact(contact);
+//   }
+// }
+// // loopContacts();
+
+// function processContact(contact) {
+//   console.log(`ID: ${contact.id}`);
+//   console.log(`Name: ${contact.name}`);
+//   console.log(`Address: ${contact.address}`);
+//   console.log(`Phone: ${contact.phone}`);
+//   console.log(`Email: ${contact.email}`);
+//   console.log(`Is Administrator: ${contact.isOperator ? "Yes" : "No"}`);
+//   console.log("----------------------");
+// }
+
+// loopContacts();
+
+async function showContact() {
+  try {
+  } catch (error) {}
+}
