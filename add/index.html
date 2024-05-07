@@ -6,8 +6,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="prose">
-      <form action="" method="post">
+    <div>
+      <form id="form-contacts">
         <div>
           <label for="name">Name : </label>
           <input
@@ -44,16 +44,29 @@
             placeholder="+6285679811"
           />
         </div>
+        <div class="mt-2 col-4">
+          <label for="level">Level : </label>
+          <input type="number" name="level" id="level" placeholder="1" />
+        </div>
         <div>
           <button
             type="submit"
-            class="mx-4 px-4 py-1 text-sm text-purple-700 font-bold rounded-lg border border-green-950 hover:text-green hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+            class="button mx-4 px-4 py-1 text-sm text-purple-700 font-bold rounded-lg border border-green-950 hover:text-green hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
           >
             Save
           </button>
+
+          <a
+            href="/index.html"
+            class="button mx-4 px-4 py-1 text-sm text-purple-700 font-bold rounded-lg border border-green-950 hover:text-green hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+            >Back</a
+          >
         </div>
       </form>
     </div>
-    <script src="index.js"></script>
+    <div>
+      <ul id="list-contacts" class="mt-4 mx-4"></ul>
+    </div>
+    <script src="/add/index.js"></script>
   </body>
 </html>

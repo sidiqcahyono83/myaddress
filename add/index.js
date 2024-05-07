@@ -1,4 +1,6 @@
 const contactsListElement = document.getElementById("list-contacts");
+const addContactFormElement = document.getElementById("form-contacts");
+
 const contacts = [
   {
     id: 1,
@@ -18,10 +20,13 @@ const contacts = [
   }
 ];
 
+function saveContact(newDataContact = contacts) {
+  localStorage.setItem("contacts", JSON.stringify(newDataContact));
+}
+
 function listContacts() {
   let storedContacts = localStorage.getItem("contacts");
   if (storedContacts) {
-    // Jika terdapat data yang tersimpan di local storage
     storedContacts = JSON.parse(storedContacts);
     const contasString = storedContacts.map((contact) => {
       const level = contact.level == 1 ? `Administrator` : `User`;
@@ -34,9 +39,8 @@ function listContacts() {
       <p>Leve  : ${level}</p>
       </li>`;
     });
-    contactsListElement.innerHTML = contasString.join(""); // Menggunakan join("") untuk menggabungkan array menjadi string
+    contactsListElement.innerHTML = contasString.join("");
   } else {
-    // Jika tidak ada data yang tersimpan di local storage, menggunakan data dari variabel
     const contasString = contacts.map((contact) => {
       const level = contact.level == 1 ? `Administrator` : `User`;
       return `<li>
@@ -48,9 +52,29 @@ function listContacts() {
       <p>Leve  : ${level}</p>
       </li>`;
     });
-    contactsListElement.innerHTML = contasString.join(""); // Menggunakan join("") untuk menggabungkan array menjadi string
+    contactsListElement.innerHTML = contasString.join("");
   }
 }
-
-// Memanggil fungsi listContacts saat halaman dimuat
 listContacts();
+
+function addContact(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const nextId = contacts[contacts.length - 1].id + 1;
+
+  const newContact = {
+    id: nextId,
+    name: formData.get("name"),
+    address: formData.get("address"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    level: formData.get(level)
+  };
+
+  const newDataContact = [...contacts, newContact];
+  saveContact(newDataContact);
+  listContacts();
+}
+
+addContactFormElement.addEventListener("submit", addContact);
