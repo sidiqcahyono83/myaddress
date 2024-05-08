@@ -61,6 +61,8 @@ function addContact(event) {
   event.preventDefault();
 
   const formData = new FormData(this);
+  const storedContacts = localStorage.getItem("contacts");
+  let contacts = storedContacts ? JSON.parse(storedContacts) : [];
   const nextId = contacts[contacts.length - 1].id + 1;
 
   const newContact = {
