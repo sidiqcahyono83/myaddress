@@ -8,7 +8,7 @@ const contacts = [
     address: "Jl. Raya Sruweng No. 114",
     phone: +628567947201,
     email: "cdq.cahyono@gmail.com",
-    level: 1
+    level: 1,
   },
   {
     id: 2,
@@ -16,8 +16,8 @@ const contacts = [
     address: "Jl. Raya Sruweng No. 115",
     phone: +628567947202,
     email: "tasqif.sidiq@gmail.com",
-    level: 0
-  }
+    level: 0,
+  },
 ];
 
 function saveContact(newDataContact = contacts) {
@@ -61,9 +61,12 @@ function addContact(event) {
   event.preventDefault();
 
   const formData = new FormData(this);
+  const stored = saveContact();
   const storedContacts = localStorage.getItem("contacts");
-  let contacts = storedContacts ? JSON.parse(storedContacts) : [];
-  const nextId = contacts[contacts.length - 1].id + 1;
+
+  let contactsParse = storedContacts ? JSON.parse(storedContacts) : [];
+
+  const nextId = contactsParse[contacts.length - 1].id + 1;
 
   const newContact = {
     id: nextId,
@@ -71,7 +74,7 @@ function addContact(event) {
     address: formData.get("address"),
     email: formData.get("email"),
     phone: formData.get("phone"),
-    level: formData.get(level)
+    level: formData.get(level),
   };
 
   const newDataContact = [...contacts, newContact];

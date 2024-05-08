@@ -7,7 +7,7 @@ const contacts = [
     address: "Jl. Raya Sruweng No. 114",
     phone: +628567947201,
     email: "cdq.cahyono@gmail.com",
-    level: 1
+    level: 1,
   },
   {
     id: 2,
@@ -15,21 +15,18 @@ const contacts = [
     address: "Jl. Raya Sruweng No. 115",
     phone: +628567947202,
     email: "tasqif.sidiq@gmail.com",
-    level: 0
-  }
+    level: 0,
+  },
 ];
 
 function listContacts() {
   const searchParams = new URLSearchParams(window.location.search);
-  // const keyword = searchParams.get("q");
-  // searchKeywordInputElement.value = keyword;
+  const keyword = searchParams.get("q");
+  searchKeywordInputElement.value = keyword;
 
-  // // const listDataContact = listContacts();
-
-  // const filteredContacts = keyword
-  //   ? searchContacts(contacts, keyword)
-  //   : contacts;
-  // console.log(filteredContacts);
+  const filteredContacts = keyword
+    ? searchContacts(contacts, keyword)
+    : contacts;
 
   let storedContacts = localStorage.getItem("contacts");
   if (storedContacts) {
