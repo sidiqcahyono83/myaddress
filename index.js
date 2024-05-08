@@ -21,15 +21,15 @@ const contacts = [
 
 function listContacts() {
   const searchParams = new URLSearchParams(window.location.search);
-  const keyword = searchParams.get("q");
-  searchKeywordInputElement.value = keyword;
+  // const keyword = searchParams.get("q");
+  // searchKeywordInputElement.value = keyword;
 
-  // const listDataContact = listContacts();
+  // // const listDataContact = listContacts();
 
-  const filteredContacts = keyword
-    ? searchContacts(contacts, keyword)
-    : contacts;
-  console.log(filteredContacts);
+  // const filteredContacts = keyword
+  //   ? searchContacts(contacts, keyword)
+  //   : contacts;
+  // console.log(filteredContacts);
 
   let storedContacts = localStorage.getItem("contacts");
   if (storedContacts) {
